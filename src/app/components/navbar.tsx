@@ -1,12 +1,11 @@
 "use client";
 
 import { ThemeProvider } from "@/app/components/theme-provider";
-import { Bone, Layout, Menu, Send, X } from "lucide-react";
+import { Briefcase, HelpCircle, Menu, Send, X } from "lucide-react";
 import { useTheme } from "next-themes";
-import { Stalemate } from "next/font/google";
+import { Cinzel } from "next/font/google";
 import Link from "next/link";
 import NavItem from "./nav-item";
-import NavLink from "./nav-link";
 import ThemeToggle from "./theme-toggle";
 import { Button } from "./ui/button";
 import {
@@ -18,8 +17,8 @@ import {
 	DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 
-const stalemate = Stalemate({
-	weight: "400",
+const cinzel = Cinzel({
+	weight: "500",
 	subsets: ["latin"],
 });
 
@@ -28,16 +27,16 @@ export default function Navbar() {
 
 	return (
 		<>
-			<nav className={`h-24 sticky top-0 z-50 ${theme === "light" ? "bg-white" : "bg-dark"}`}>
+			<nav className={`border-b-2 border-gray-800 h-24 sticky top-0 z-50 ${theme === "light" ? "bg-white" : "bg-dark"}`}>
 				<div className="h-full items-center flex justify-between gap-2 w-11/12 xl:w-5/6 lg:w-11/12 md:w-5/6 sm:w-5/6 mx-auto">
 					<Link href="#">
-						<h1 className={`logo text-[3.2rem] mt-0 ${stalemate.className}`}>Yugandhar</h1>
+						<h1 className={`logo text-[2rem] mt-0 ${cinzel.className}`}>A Dr.Kothur G Manjunath Project</h1>
 					</Link>
 					<div className="flex gap-4">
 						<div className="md:block hidden">
-							<NavItem navText="Skills" target="#skills" />
-							<NavItem navText="Projects" target="#projects" />
-							<NavItem navText="Contact Me" target="#contact" />
+							<NavItem navText="About Us" target="#about" />
+							<NavItem navText="Our Initiatives" target="#initiatives" />
+							<NavItem navText="Contact Us" target="#contact" />
 						</div>
 						<div className="dropdown md:hidden">
 							<DropdownMenu>
@@ -51,23 +50,23 @@ export default function Navbar() {
 								<DropdownMenuContent className="w-32">
 									<DropdownMenuItem>
 										{/* <NavLink navText="Skills" target="#skills" /> */}
-										<Bone className="mr-2 h-4 w-4" />
+										<HelpCircle className="mr-2 h-4 w-4" />
 										<span>
-											<Link href="#skills">Skills</Link>
+											<Link href="#about">About Us</Link>
 										</span>
 									</DropdownMenuItem>
 									<DropdownMenuItem>
 										{/* <NavLink navText="Projects" target="#projects" /> */}
-										<Layout className="mr-2 h-4 w-4" />
+										<Briefcase className="mr-2 h-4 w-4" />
 										<span>
-											<Link href="#projects">Projects</Link>
+											<Link href="#projects">Our Initiatives</Link>
 										</span>
 									</DropdownMenuItem>
 									<DropdownMenuItem>
 										{/* <NavLink navText="Contact Me" target="#contactme" /> */}
 										<Send className="mr-2 h-4 w-4" />
 										<span>
-											<Link href="#contact">Contact Me</Link>
+											<Link href="#contact">Contact </Link>
 										</span>
 									</DropdownMenuItem>
 								</DropdownMenuContent>

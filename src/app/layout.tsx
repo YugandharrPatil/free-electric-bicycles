@@ -6,8 +6,8 @@ import "./globals.css";
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
-	title: "Yugandhar Patil",
-	description: "Indie Developer from India!",
+	title: "Electric Cycles",
+	description: "We provide free electric cycles to government school students",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
