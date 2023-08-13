@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 export default function Projects() {
 	return (
 		<>
-			<Heading heading="Projects" />
+			<Heading heading="Projects" id="projects" />
 
 			<Accordion type="single" collapsible className="w-5/6 mx-auto">
 				<AccordionItem value="item-1">
