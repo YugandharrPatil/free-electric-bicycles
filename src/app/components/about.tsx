@@ -1,7 +1,14 @@
+import { Exo_2 } from "next/font/google";
+
+const exo2 = Exo_2({
+	weight: "400",
+	subsets: ["latin"],
+});
+
 export default function Data() {
 	return (
 		<>
-			<h1 id="about" className={`mt-10 text-center text-4xl sm:text-7xl xl:text-8xl leading-tight tracking-normal`}>
+			<h1 id="about" className={`mt-10 text-center text-4xl sm:text-7xl xl:text-8xl leading-tight tracking-normal ${exo2.className}`}>
 				Free Electric <br />
 				Cycles
 			</h1>

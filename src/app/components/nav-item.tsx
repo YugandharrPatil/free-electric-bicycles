@@ -1,7 +1,7 @@
 import { Lato } from "next/font/google";
 import Link from "next/link";
 import React from "react";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 
 const lato = Lato({
 	weight: "400",

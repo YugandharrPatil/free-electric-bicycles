@@ -3,49 +3,46 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/app/components/ui/input";
 import { Label } from "@/app/components/ui/label";
 import { Textarea } from "@/app/components/ui/textarea";
-import { db } from "@/lib/db";
-import { messages } from "@/lib/db/schema";
+// const sendMessage = async (data: FormData) => {
+// 	"use server";
 
-const sendMessage = async (data: FormData) => {
-	"use server";
+// 	const something = data.get("something")?.valueOf();
+// 	if (typeof something !== "string" || something.length === 0) {
+// 		throw new Error("Please enter a valid name");
+// 	}
+// 	const email = data.get("email")?.valueOf();
+// 	if (typeof email !== "string" || email.length === 0) {
+// 		throw new Error("Please enter an email");
+// 	}
+// 	const message = data.get("message")?.valueOf();
+// 	if (typeof message !== "string" || message.length === 0) {
+// 		throw new Error("Please enter a valid message");
+// 	}
 
-	const something = data.get("something")?.valueOf();
-	if (typeof something !== "string" || something.length === 0) {
-		throw new Error("Please enter a valid name");
-	}
-	const email = data.get("email")?.valueOf();
-	if (typeof email !== "string" || email.length === 0) {
-		throw new Error("Please enter an email");
-	}
-	const message = data.get("message")?.valueOf();
-	if (typeof message !== "string" || message.length === 0) {
-		throw new Error("Please enter a valid message");
-	}
+// 	const obj = {
+// 		something: something,
+// 		email: email,
+// 		message: message,
+// 	};
 
-	const obj = {
-		something: something,
-		email: email,
-		message: message,
-	};
-
-	try {
-		await db.insert(messages).values(obj);
-		console.log("New Message:", obj);
-	} catch (err) {
-		console.log(err);
-	}
-};
+// 	try {
+// 		await db.insert(messages).values(obj);
+// 		console.log("New Message:", obj);
+// 	} catch (err) {
+// 		console.log(err);
+// 	}
+// };
 
 export default function Connect() {
 	return (
 		<>
 			<Card id="contact" className="mt-10 w-10/12 sm:w-8/12 md:w-8/12 lg:w-7/12 xl:w-5/12 2xl:w-1/3 mx-auto mb-10">
 				<CardHeader className="text-center">
-					<CardTitle className="text-2xl">Write me a message!</CardTitle>
-					<CardDescription>Have a project in mind? Something I can help with?</CardDescription>
+					<CardTitle className="text-2xl">Write us a Message!</CardTitle>
+					<CardDescription>Can we help you in some way? Know someone who could help?</CardDescription>
 				</CardHeader>
 				<CardContent>
-					<form action={sendMessage}>
+					<form>
 						<div className="grid w-full items-center gap-4">
 							<div className="flex flex-col space-y-1.5">
 								<Label htmlFor="name">Name</Label>
